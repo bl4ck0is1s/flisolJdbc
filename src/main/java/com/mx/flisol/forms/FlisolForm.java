@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -88,7 +89,6 @@ public class FlisolForm extends javax.swing.JFrame {
         txtPassword = new javax.swing.JTextField();
         menuBar = new javax.swing.JMenuBar();
         helpMenu = new javax.swing.JMenu();
-        contentsMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -162,12 +162,13 @@ public class FlisolForm extends javax.swing.JFrame {
         helpMenu.setMnemonic('h');
         helpMenu.setText("About");
 
-        contentsMenuItem.setMnemonic('c');
-        contentsMenuItem.setText("Contents");
-        helpMenu.add(contentsMenuItem);
-
         aboutMenuItem.setMnemonic('a');
         aboutMenuItem.setText("About");
+        aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutMenuItemActionPerformed(evt);
+            }
+        });
         helpMenu.add(aboutMenuItem);
 
         menuBar.add(helpMenu);
@@ -324,6 +325,10 @@ public class FlisolForm extends javax.swing.JFrame {
         loadTableUsuario();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
+    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
+     JOptionPane.showMessageDialog(null, "creado por: Julio Martinez Andrade ");
+    }//GEN-LAST:event_aboutMenuItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -365,7 +370,6 @@ public class FlisolForm extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
