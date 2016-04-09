@@ -1,3 +1,4 @@
+CREATE DATABASE flisol;
 CREATE TABLE usuario (
   id_usuario int(11) NOT NULL AUTO_INCREMENT,
   nombre varchar(100) NOT NULL,
